@@ -1,28 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+
 public class ColDetection : MonoBehaviour
 {
-    public int contador = 0;
-    public Text contadorText;
-    // Start is called before the first frame update
-    void Start()
+    public int score = 0;
+    public int maxScore = 10; // Puntaje máximo para ganar
+    private UIManager uiManager;
+
+    void Awake()
     {
-        contadorText.text = "Score: " + contador;
+        uiManager = FindObjectOfType<UIManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-    void OnTriggerEnter(Collider other){
-        if (other.CompareTag("celu")){
+        if (other.CompareTag("celu"))
+        {
             Destroy(other.gameObject);
-            contador++;
-            contadorText.text = "Score: " + contador;
+            score++;
+            uiManager.UpdateScore(score);
+
+            // Verificar si se alcanzó el puntaje máximo
+            if (score >= maxScore)
+            {
+                Win();
+            }
         }
-        
+    }
+
+    void Win()
+    {
+        Time.timeScale = 0; // Detener el tiempo
+        if (uiManager != null)
+        {
+            uiManager.MostrarPantallaWin();
+        }
     }
 }

@@ -1,16 +1,39 @@
 fileFormatVersion: 2
-guid: 45d3bd0439522de458f95f8da217fc6f
+guid: 05672c385cfb1b847be4b3cc694822da
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Material.002
+    2100000: color-celu
+    2100002: camara-pantalla
+    2100004: nada
+    2100006: reflectante
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: camara-pantalla
+    second: {fileID: 2100000, guid: 818fbce14bf1a664ea94e8793aed2e8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: color-celu
+    second: {fileID: 2100000, guid: 91f9271c289d5134abba788e84ee3507, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nada
+    second: {fileID: 2100000, guid: e96ca0ad079df1640a9aad1efc7f7cd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: reflectante
+    second: {fileID: 2100000, guid: 378d631e393e4404eaf283a40dc0ff51, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
