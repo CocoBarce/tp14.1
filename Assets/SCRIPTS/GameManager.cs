@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameEnded)
         {
-            // Reiniciar el juego si se presiona "R"
+           
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
