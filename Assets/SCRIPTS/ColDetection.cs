@@ -5,10 +5,12 @@ public class ColDetection : MonoBehaviour
     public int score = 0;
     public int maxScore = 10; // Puntaje máximo para ganar
     private UIManager uiManager;
+    private GameManager gameManager;
 
     void Awake()
     {
         uiManager = FindObjectOfType<UIManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -29,10 +31,9 @@ public class ColDetection : MonoBehaviour
 
     void Win()
     {
-        Time.timeScale = 0; // Detener el tiempo
-        if (uiManager != null)
+        if (gameManager != null)
         {
-            uiManager.MostrarPantallaWin();
+            gameManager.GameWin();
         }
     }
 }

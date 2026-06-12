@@ -56,4 +56,14 @@ public class GameManager : MonoBehaviour
             uiManager.MostrarPantallaGameOver();
         }
     }
+
+    public void GameWin()
+    {
+        gameEnded = true;
+        Time.timeScale = 0;
+        if (uiManager != null)
+        {
+            uiManager.MostrarPantallaWin();
+        }
+    }
 }
